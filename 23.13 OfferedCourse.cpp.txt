@@ -1,0 +1,24 @@
+#include "OfferedCourse.h"
+
+// TODO: Define mutator functions -
+//      SetInstructorName(), SetTerm(), SetClassTime()
+   void OfferedCourse::SetInstructorName(std::string x){
+      instructorName = x;
+      }
+   void OfferedCourse::SetTerm(std::string x){
+      term = x;
+      }   
+   void OfferedCourse::SetClassTime(std::string x){
+      classTime = x;
+      }
+// TODO: Define accessor functions -
+//      GetInstructorName(), GetTerm(), GetClassTime()
+   string OfferedCourse::GetInstructorName(){
+      return instructorName;
+      }
+   string OfferedCourse::GetTerm(){
+      return term;
+      }
+   string OfferedCourse::GetClassTime(){
+      return classTime;
+      }

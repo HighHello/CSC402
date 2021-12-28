@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+
+   /* Type your code here. */
+string fileName;   
+   
+   
+
+   /* TODO: Read a file name from the user and read the tsv file here. */
+   cin >> fileName;
+   ifstream infs(fileName);
+   
+
+   if(!infs.is_open()){cout<<"Error opening file"<<endl;return -1;}
+
+   for (string line; getline(infs, line); ) {
+   string tab = "\t";
+   string type = line.substr(0, line.find('\t'));
+   line.erase(0,line.find('\t')+tab.length());
+   string food = line.substr(0, line.find('\t'));
+   line.erase(0,line.find('\t')+tab.length());
+   string desc = line.substr(0, line.find('\t'));
+   line.erase(0,line.find('\t')+tab.length());
+   string avail = line.substr(0, line.find('\t'));
+   line.erase(0,line.find('\t')+tab.length());
+   if(avail=="Available")cout<<food<<" ("<<type<<") -- "<<desc<<endl;
+   
+
+   
+  
+
+   }
+
+  
+   infs.close();
+   
+   return 0;
+}

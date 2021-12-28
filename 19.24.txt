@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+/* Define your function here */
+void SortVector(vector<int>& myVec){
+   //sort selection sort
+   int i,indexMax;
+   for(i =  0; i <myVec.size() ;i++){
+      indexMax=i;
+      for(int j = i; j < myVec.size() ;j++){
+         if(myVec[indexMax] < myVec[j]){
+            int temp;
+            temp = myVec[indexMax];
+            myVec[indexMax] = myVec[j];
+            myVec[j] =temp;
+         }
+      }
+   }
+
+      for(int k = 0; k<myVec.size() ; k++){
+         cout << myVec[k]<<",";
+         }
+         cout<<endl;
+   
+   }
+int main() {
+   /* Type your code here */
+   int numEl;
+   cin >> numEl;
+   vector<int> nums;
+   for ( int i = 0; i<numEl; i++){
+      int var;
+      cin >> var;
+      nums.push_back(var);
+      }
+   SortVector(nums);
+   return 0;
+}

@@ -1,0 +1,63 @@
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+char grade(float x, float y, float z){
+   int total = (x+y+z)/3;
+   if(90<=total)return 'A';
+   else if(80<=total)return 'B';
+   else if(70<=total)return 'C';
+   else if(60<=total)return 'D';
+   else if(total<60) return 'F';
+   }
+int main() {
+
+   /* TODO: Declare any necessary variables here. */
+   string fileName;   
+   ifstream infs;
+   ofstream outfs;
+   string first, last;
+   double e1,e2,e3;
+   double total1, total2,total3;
+   double count=0;
+   double avg1, avg2, avg3;
+   
+
+   /* TODO: Read a file name from the user and read the tsv file here. */
+   cin >> fileName;
+   infs.open(fileName);
+   outfs.open("report.txt");
+   if(!outfs.is_open()){cout<<"Error opening file"<<endl;return -1;}
+   if(!infs.is_open()){cout<<"Error opening file"<<endl;return -1;}
+   infs>>first;
+   while(!infs.eof()){
+
+   infs>>last;
+   infs>> e1;
+   infs>> e2;
+   infs>> e3;
+   total1+=e1;
+   total2+=e2;
+   total3+=e3;
+   count++;
+   
+   outfs<<first<<"\t"<<last<<"\t"<<e1<<"\t"<<e2<<"\t"<<e3<<"\t"<<grade(e1,e2,e3)<<endl;
+   infs>>first;
+   }
+
+   outfs<<setprecision(2)<<fixed<<"\nAverages: midterm1 "<< total1/count<<", midterm2 "<<total2/count<<", final "<<total3/count<<endl;
+   
+   infs.close();
+   outfs.close();
+
+
+   
+   
+   /* TODO: Compute student grades and exam averages, then output results to a text file here. */
+
+   return 0;
+}

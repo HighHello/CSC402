@@ -1,0 +1,25 @@
+#ifndef STR_INSTRUMENTH
+#define STR_INSTRUMENTH
+
+#include "Instrument.h"
+
+class StringInstrument : public Instrument {
+	// TODO: Declare private data members: numStrings, numFrets
+   protected: string numStrings, numFrets;
+
+	// TODO: Declare mutator functions - 
+	//      SetNumOfStrings(), SetNumOfFrets()
+   public: 
+   void SetNumOfStrings(string num);
+   void SetNumOfFrets(string num);
+
+	// TODO: Declare accessor functions -
+	//      GetNumOfStrings(), GetNumOfFrets()
+	public: 
+	string GetNumOfStrings();
+   string GetNumOfFrets();
+
+
+};
+
+#endif

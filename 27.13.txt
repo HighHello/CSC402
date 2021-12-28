@@ -1,0 +1,30 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+int main() {
+   string line;
+   getline(cin, line);
+   bool result = 1;
+   deque<char> pal;
+   for(char x : line){
+      if(x != ' '&&x != '!'&&x !='?')pal.push_front(x);
+   }
+   while(pal.size() >1){
+      if(pal.front()==pal.back()){
+         pal.pop_back();
+         pal.pop_front();
+         }
+      else{
+         
+         result = 0;
+         break;
+         }
+   }
+   if(result)cout<< "Yes, \""<<line<< "\" is a palindrome."<<endl;
+   else cout<< "No, \""<<line<< "\" is not a palindrome."<<endl;
+   /* Type your code here. */
+   
+   return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+
+   /* Type your code here. */
+   ifstream infs;
+   string s;
+   string fileName;
+   cin>>fileName;
+   infs.open(fileName);
+   if(!infs.is_open()){
+      return -1;
+      }
+   
+   
+   infs>>s;
+   while(!infs.fail()){
+      cout<<s.substr(0,s.find("_")+1)<<"info.txt"<<endl;
+      
+      
+      infs>>s;
+      }
+   if(!infs.eof()){
+      cout <<"Read fail"<<endl;
+      }
+   infs.close();
+   
+   return 0;
+}

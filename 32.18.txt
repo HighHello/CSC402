@@ -1,0 +1,51 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+   /* Type your code here. */
+   //Test 1 
+   /*
+   Test 1 output 
+   Friday Night Party
+   4 Pizzas: $42.00
+   */
+   double total=0;
+   for(int count =0; count<3; count++){
+   if(count==0)cout <<"Friday Night Party"<<"\n";
+   if (count==1)cout <<"Saturday Night Party"<<"\n";
+   if (count==2)cout <<"Sunday Night Party"<<"\n";
+   
+   int people;
+   double pizzaAvg;
+   double cost;
+   cin >> people;
+   cin >> pizzaAvg;
+   cin >> cost;
+   
+   //important syntax
+   cout<<fixed;
+   cout<<setprecision(2);
+   
+   
+   
+   int pizzaNum = (int)ceil(people*pizzaAvg/8);
+   cout << pizzaNum <<" Pizzas: $" <<pizzaNum*cost<<"\n";
+   /*
+   Test 2 output
+   Friday Night Party
+   4 Pizzas: $42.00
+   Tax: $2.94
+   Delivery: $8.99
+   */
+   cout << "Tax: $"<<pizzaNum*cost*0.07 << "\n" <<"Delivery: $"<<pizzaNum*cost*1.07*.2<<"\n";
+   cout <<"Total: $"<<pizzaNum*cost*1.07*1.2<<"\n\n";
+   total+=(pizzaNum*cost*1.07*1.2);
+   }
+   cout<<"Weekend Total: $"<<total<<"\n";
+   
+   
+   return 0;
+}

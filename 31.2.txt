@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+   /* Type your code here. */
+   string input;
+   cin >> input;
+   cout <<"      \/\\_\/\\"<<"\n";
+   cout <<" \/\\  \/ o o \\"<<"\n";
+   cout <<"//\\\\ \\~(*)~/"<<"\n";
+   cout <<"`  \\/   ^ /"<<"\n";
+   cout <<"   | \\|| ||"<<"\n";
+   cout <<"   \\ '|| ||"<<"\n";
+   cout <<"    \\)()-())"<<"\n";
+   cout <<"My cat "+input<<"\n";
+
+   return 0;
+}

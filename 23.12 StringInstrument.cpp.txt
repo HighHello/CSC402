@@ -1,0 +1,19 @@
+#include "StringInstrument.h"
+
+// TODO: Define mutator functions - 
+//      SetNumOfStrings(), SetNumOfFrets()
+   void StringInstrument::SetNumOfStrings(std::string num){
+      numStrings = num;
+      }
+   void StringInstrument::SetNumOfFrets(std::string num){
+      numFrets = num;
+      }
+// TODO: Define accessor functions -
+//      GetNumOfStrings(), GetNumOfFrets()
+   string StringInstrument::GetNumOfStrings(){
+      return numStrings;
+      }
+   string StringInstrument::GetNumOfFrets(){
+      return numFrets;
+      }
+   

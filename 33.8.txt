@@ -1,0 +1,78 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+double over(double x);
+char grade(double x);
+int main() {
+   double HOMEWORK_MAX = 800.0;
+   double QUIZZES_MAX = 400.0;
+   double MIDTERM_MAX = 150.0;
+   double FINAL_MAX = 200.0;
+
+   /* Type your code here. */
+   string status;
+   double homework;
+   double quiz;
+   double midterm;
+   double final;
+   cin >> status;
+   cin >>homework;
+   cin >>quiz;
+   cin >>midterm;
+   cin >>final;
+   if(!(status.compare("UG")==0||status.compare("G")==0||status.compare("DL")==0)){
+      cout<<"Error: student status must be UG, G or DL\n";
+   }
+   else{
+   double phomework = over(homework/HOMEWORK_MAX*100);   
+   double pquiz = over(quiz/QUIZZES_MAX*100);
+   double pmidterm = over(midterm/MIDTERM_MAX*100);
+   double pfinal = over(final/FINAL_MAX*100);
+
+   
+   cout<<fixed;
+   cout<<setprecision(1);
+   
+   cout << "Homework: " << phomework << "%\n";
+   cout << "Quizzes: " << pquiz << "%\n";
+   cout << "Midterm: " << pmidterm << "%\n";
+   cout << "Final Exam: " << pfinal << "%\n";
+   
+   
+   if(status.compare("UG")==0){
+      double avg = phomework*.2+pquiz*.2+pmidterm*.3+pfinal*.3;
+      cout <<"UG average: "<<avg<<"%\n";
+      
+      cout <<"Course grade: "<<grade(avg)<<"\n";
+   }
+   if(status.compare("G")==0){
+      double avg = phomework*.15+pquiz*.05+pmidterm*.35+pfinal*.45;
+      cout <<"G average: "<<avg<<"%\n";
+      
+      cout <<"Course grade: "<<grade(avg)<<"\n";
+   }      
+   if(status.compare("DL")==0){
+      double avg = phomework*.05+pquiz*.05+pmidterm*.4+pfinal*.5;
+      cout <<"DL average: "<<avg<<"%\n";
+      
+      cout <<"Course grade: "<<grade(avg)<<"\n";
+   }      
+      
+
+   
+   
+   
+   }
+
+   return 0;
+}
+double over(double x){
+   if (x >100) return x =100;
+   }
+char grade(double x){
+   if(x>=90)return 'A';
+   else if(x>=80)return 'B';
+   else if(x>=70)return 'C';
+   else if(x>=60)return 'D';
+   else return 'F';
+   }

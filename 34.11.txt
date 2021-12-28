@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   const int ROCK = 0;
+   const int PAPER = 1;
+   const int SCISSORS = 2;
+
+   int seed;
+   cin >> seed;
+   srand(seed);
+
+   /* Type your code here. */
+   //Step1
+   int numRounds=-1;
+   string p1;
+   string p2;
+   cin >> p1;
+   cin >> p2;
+   while(1){
+      cin >> numRounds;
+      if(numRounds>0)break;
+      else cout <<"Rounds must be > 0\n";
+      }
+   cout <<p1<<" vs "<<p2<<" for "<<numRounds<<" rounds\n";
+   //Step2
+   int p1Value;
+   int p2Value;
+   int p1Wins=0;
+   int p2Wins=0;
+   for(int i=0; i<numRounds;i++){
+      while(1){
+         p1Value = rand()%3;
+         p2Value = rand()%3;
+         if(p1Value==p2Value)cout<<"Tie\n";
+         else 
+            if(p1Value-p2Value==-2||p1Value-p2Value==1){//p1 wins
+               if(p1Value == ROCK) cout<<p1<<" wins with rock\n";
+               if(p1Value == PAPER) cout<<p1<<" wins with paper\n";
+               if(p1Value == SCISSORS) cout<<p1<<" wins with scissors\n";
+               p1Wins++;
+               break;
+            }
+            else 
+            if(p1Value-p2Value==2||p1Value-p2Value==-1){//p1 wins
+               if(p2Value == ROCK) cout<<p2<<" wins with rock\n";
+               if(p2Value == PAPER) cout<<p2<<" wins with paper\n";
+               if(p2Value == SCISSORS) cout<<p2<<" wins with scissors\n";
+               p2Wins++;
+               break;
+            }
+         
+         }
+   }
+   cout<<p1<<" wins "<<p1Wins<<" and "<< p2 << " wins " <<p2Wins<<"\n";
+   
+
+   return 0;
+
+}

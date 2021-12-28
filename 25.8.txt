@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iomanip>
+#include <stdexcept>
+using namespace std;
+double StepsToMiles(int steps){
+   if (steps<0)throw runtime_error("Exception: Negative step count entered.");
+   return (double)steps/2000;
+   
+   }
+/* Define your function here */ 
+
+int main() {
+   cout << fixed << setprecision(2); 
+   /* Type your code here. */
+   int steps;
+   cin>>steps;
+   try{
+      cout<<StepsToMiles(steps)<<endl;
+   }catch(runtime_error e){
+      cout<<e.what()<<endl;}
+   return 0;
+}

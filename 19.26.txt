@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int Fibonacci(int n) {
+   if(n<0)return -1;
+   int prev = 0;
+   int next = 1;
+   int sum;
+   for(int i = 0; i<n; i++){
+      sum = prev+next;
+      prev = next;
+      next = sum;
+      
+      }
+   return prev;
+   /* Type your code here. */     
+   
+}
+
+int main() {
+   int startNum;
+      
+   cin >> startNum;
+   cout << "Fibonacci(" << startNum << ") is " << Fibonacci(startNum) << endl;
+
+   return 0;
+}

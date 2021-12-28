@@ -1,0 +1,89 @@
+#include <iostream>
+// FIXME include vector library
+#include <vector> 
+using namespace std;
+
+
+
+int main() {
+
+   /* Type your code here. */
+   
+   //1
+   vector<int> num(5);
+   vector<int> rate(5);
+   char input;
+   
+   auto roster = [&]() {
+      cout << "ROSTER\n";
+      for( int i = 0; i < num.size(); i++){
+         cout << "Player "<< i+1 <<" -- Jersey number: "<< num.at(i) <<", Rating: "<< rate.at(i) <<"\n";
+         }
+      cout <<"\n"; 
+      };
+   auto add = [&]() {
+      int temp;
+      cout<<"Enter a new player's jersey number:\n";
+      cin >> temp;
+      num.push_back(temp);
+      cout<<"Enter the player's rating:\n";
+      cin >> temp;
+      rate.push_back(temp);
+      cout <<"\n";
+      };
+   auto del = [&]() {
+      int numD;
+      cout<<"Enter a jersey number:\n";
+      cin >> numD;
+      //find value
+      for(int i = 0; i < num.size() ; i++){
+         if(num.at(i) == numD){num.erase(num.begin()+i);rate.erase(rate.begin()+i);break;}
+         }
+         //else return something something error code
+      };
+   auto update = [&]() {
+      int temp1;
+      int temp2;
+      cout << "Enter a jersey number:\n";
+      cin >> temp1;
+      cout << "Enter a new rating for the player:\n";
+      cin >> temp2;
+      for(int i = 0; i < num.size() ; i++){
+         if(num.at(i) == temp1) rate.at(i) = temp2;
+         }
+      };
+   auto abv = [&]() {
+      int abvVal;
+      cout << "Enter a rating:"<<endl;
+      cin >> abvVal;
+      cout <<"ABOVE "<<abvVal<<endl;
+      for(int i=0; i< num.size(); i++){
+         if(rate.at(i)>abvVal) cout <<"Player "<<i+1<<" -- Jersey number: "<<num.at(i)<<", Rating: "<<rate.at(i)<<endl;
+      
+      }
+      cout<<endl;
+   };
+   
+
+   for( int i = 0; i < 5; i++){
+      cout << "Enter player "<< i+1 << "\'s jersey number:\n";
+      cin >> num.at(i);
+      cout <<"Enter player "<< i+1 <<"\'s rating:\n";
+      cin >> rate.at(i);
+      cout <<"\n";
+   }
+   
+   roster();
+   
+   while (input!='q'){
+      cout << "MENU\na - Add player\nd - Remove player\nu - Update player rating\nr - Output players above a rating\no - Output roster\nq - Quit\n\nChoose an option:\n";
+      cin >> input;
+      if (input == 'q')break;
+      if (input =='o')roster();
+      if (input =='a')add();
+      if (input =='d')del();
+      if (input =='u')update();
+      if (input =='r')abv();
+   }
+   return 0;
+}

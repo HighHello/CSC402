@@ -1,0 +1,23 @@
+#include "Encyclopedia.h"
+#include <iostream>
+
+// Define functions declared in Encyclopedia.h
+   // TODO: Declare mutator functions -
+   //       SetEdition(), SetNumVolumes()
+   void Encyclopedia::SetEdition(std::string x){
+      edition =x;
+      };
+   void Encyclopedia::SetNumVolumes(int x){numVolumes=x;};
+   
+
+   // TODO: Declare accessor functions -
+   //       GetEdition(), GetNumVolumes()
+   std::string Encyclopedia::GetEdition(){return edition;};
+   int Encyclopedia::GetNumVolumes(){return numVolumes;};
+
+   // TODO: Declare a PrintInfo() function that overrides
+   //       the PrintInfo in Book class
+   void Encyclopedia::PrintInfo(){
+      Book::PrintInfo();
+      cout << "   Edition: " << edition << endl;
+      cout << "   Number of Volumes: " << numVolumes << endl;};

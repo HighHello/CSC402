@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   
+   /* Type your code here. */
+   int areaCode, prefix, lineNumber;
+   cin >> areaCode;
+   cin >> prefix;
+   cin >> lineNumber;
+   cout << "Country  Phone Number\n-------  ------------\n";
+   //US   
+   cout << "U.S.     "<<"+1 ("<<areaCode << ")" << prefix << "-" <<lineNumber<<"\n";
+   //Brazil
+   cout <<"Brazil   "<<"+55 ("<<areaCode<< ")" << prefix+100 << "-" <<lineNumber<<"\n";
+   //Croatia
+   cout <<"Croatia  "<<"+385 ("<<areaCode<< ")" << prefix << "-" <<lineNumber+50<<"\n";
+   //Egypt
+   cout <<"Egypt    "<<"+20 ("<<areaCode+30<< ")" << prefix << "-" <<lineNumber<<"\n";
+   //France
+   cout <<"France   "<<"+33 ("<<prefix<< ")" << areaCode << "-" <<lineNumber<<"\n";
+    return 0;
+   
+}

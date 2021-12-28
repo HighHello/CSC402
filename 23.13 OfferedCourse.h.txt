@@ -1,0 +1,26 @@
+#ifndef OFFERED_COURSEH
+#define OFFERED_COURSEH
+
+#include "Course.h"
+
+class OfferedCourse : public Course {
+	// TODO: Declare private data members - instructorName, term, classTime
+   public:
+   string instructorName, term, classTime;
+
+	// TODO: Declare mutator functions -
+	//      SetInstructorName(), SetTerm(), SetClassTime()
+   void SetInstructorName(string x);
+   void SetTerm(string x);
+   void SetClassTime(string x);
+
+	// TODO: Declare accessor functions -
+	//      GetInstructorName(), GetTerm(), GetClassTime()
+   string GetInstructorName();
+   string GetTerm();
+   string GetClassTime();
+
+
+};
+
+#endif

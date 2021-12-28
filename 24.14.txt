@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+/* TODO: Write recursive DrawTriangle() function here. */
+void DrawTriangle(int baseLength){
+   if(baseLength ==1){
+      cout<<(string(9-(baseLength-1)/2,' ')+(string(baseLength,'*')))<<endl;
+      return;}
+   DrawTriangle(baseLength-2);
+   cout<<(string(9-(baseLength-1)/2,' ')+(string(baseLength,'*')))<<endl;
+   return;
+   }
+
+int main() {
+   int baseLength;
+   
+   cin >> baseLength;
+   DrawTriangle(baseLength);
+   return 0;
+}
